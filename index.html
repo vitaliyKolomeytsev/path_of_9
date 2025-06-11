@@ -1,1 +1,132 @@
-test
+You said:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+      padding: 20px;
+      height: 100vh;
+      box-sizing: border-box
+    }
+
+    .card {
+      background: #1e1e1e;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #00ffcc;
+    }
+
+    .description {
+      font-size: 0.95em;
+      margin-bottom: 10px;
+      color: #cccccc;
+    }
+
+    .reward {
+      font-weight: bold;
+      color: #ffd700;
+    }
+.sortable-ghost {
+  opacity: 0.3;
+  transform: scale(1.05);
+  background-color: #333;
+}
+
+.sortable-chosen {
+  box-shadow: 0 0 15px #00ffcc;
+  opacity: 1;
+}
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="card">
+      <div class="title">Task 1</div>
+      <div class="description"></div>
+      <div class="reward">Reward:</div>
+    </div>
+    <div class="card">
+      <div class="title">Task 2</div>
+      <div class="description">Read 10 pages</div>
+      <div class="reward">Reward: Tea & calm</div>
+    </div>
+    <div class="card">
+      <div class="title">Task 3</div>
+      <div class="description">No phone until 12</div>
+      <div class="reward">Reward: Mental clarity</div>
+    </div>
+    <div class="card">
+      <div class="title">Task 4</div>
+      <div class="description">Workout 1 hour</div>
+      <div class="reward">Reward: Endorphins</div>
+    </div>
+    <div class="card">
+      <div class="title">Task 5</div>
+      <div class="description">Meditate 15 min</div>
+      <div class="reward">Reward: Inner peace</div>
+    </div>
+    <div class="card">
+      <div class="title">Task 6</div>
+      <div class="description">Eat clean all day</div>
+      <div class="reward">Reward: Energy boost</div>
+    </div>
+    <div class="card">
+      <div class="title">Task 7</div>
+      <div class="description">No complaining</div>
+      <div class="reward">Reward: Warrior's mind</div>
+    </div>
+    <div class="card">
+      <div class="title">Task 8</div>
+      <div class="description">1 hour coding</div>
+      <div class="reward">Reward: XP +1</div>
+    </div>
+    <div class="card">
+      <div class="title">Task 9</div>
+      <div class="description">Help someone</div>
+      <div class="reward">Reward: Soul +1</div>
+    </div>
+  </div>
+   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+   <script>
+  const grid = document.querySelector('.grid');
+
+  new Sortable(document.querySelector('.grid'), {
+     animation: 150,
+  ghostClass: 'sortable-ghost',
+  chosenClass: 'sortable-chosen',
+  fallbackOnBody: true,
+  swapThreshold: 0.65
+  });
+</script>
+</body>
+</html>
