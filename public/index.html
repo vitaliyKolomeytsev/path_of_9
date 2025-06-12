@@ -1,75 +1,13 @@
-You said:
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css" />
   <title>Task Cards</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      margin: 0;
-      
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      width: 100%;
-      padding: 20px;
-      height: 100vh;
-      box-sizing: border-box
-    }
-
-    .card {
-      background: #1e1e1e;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .title {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-      color: #00ffcc;
-    }
-
-    .description {
-      font-size: 0.95em;
-      margin-bottom: 10px;
-      color: #cccccc;
-    }
-
-    .reward {
-      font-weight: bold;
-      color: #ffd700;
-    }
-.sortable-ghost {
-  opacity: 0.3;
-  transform: scale(1.05);
-  background-color: #333;
-}
-
-.sortable-chosen {
-  box-shadow: 0 0 15px #00ffcc;
-  opacity: 1;
-}
-  </style>
 </head>
 <body>
-  <div class="grid">
+  <div class="grid" id="app">
     <div class="card">
       <div class="title">Task 1</div>
       <div class="description"></div>
@@ -116,17 +54,13 @@ You said:
       <div class="reward">Reward: Soul +1</div>
     </div>
   </div>
-   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
-   <script>
-  const grid = document.querySelector('.grid');
 
-  new Sortable(document.querySelector('.grid'), {
-     animation: 150,
-  ghostClass: 'sortable-ghost',
-  chosenClass: 'sortable-chosen',
-  fallbackOnBody: true,
-  swapThreshold: 0.65
-  });
-</script>
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script src="https://unpkg.com/vue@3"></script>
+
+  <!-- Custom Scripts -->
+  <script src="sortable-init.js"></script>
+  <script src="vue-app.js"></script>
 </body>
 </html>
